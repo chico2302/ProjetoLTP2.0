@@ -5,6 +5,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -12,6 +13,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import view.pacote.servico.IncluirPacotePage;
 import view.pacote.servico.InserirPage;
 import view.pacote.servico.ListarPage;
 import view.pacote.servico.RemoverPage;
@@ -82,8 +85,20 @@ public class ServicoPage extends JFrame {
 			
 		});
 		
-		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Incluir serviço");
+		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Incluir serviço à pacote");
 		mnNewMenu.add(mntmNewMenuItem_3);
+		
+		mntmNewMenuItem_3.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new IncluirPacotePage();
+				setVisible(false);
+				
+			}
+			
+		});
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
